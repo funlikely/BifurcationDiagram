@@ -2,9 +2,10 @@
     Bifurcation Diagram
 '''
 
-import pygame
-from math import cos
+import math
 import sys
+import pygame
+
 
 def main():
     print('Hello World')
@@ -24,9 +25,10 @@ def main():
         if redraw:
             for ix in range(600):
                 x = ix / 600
-                y = f(x)
-                iy = int( 600 * (1-y))
-                screen.set_at((ix, iy), (255,255,255))
+                y_values = bifurcation_values(x)
+                iy_values = screenify_y_values(y_values)  # = int( 600 * (1-y))
+                for iy in iy_values:
+                    screen.set_at((ix, iy), (255,255,255))
 
                 pygame.display.update()
 
@@ -34,13 +36,21 @@ def main():
             
             redraw = False
     
-def f(x):
-    return cos(x)                
+def bifurcation_values(x):
+    y_values = []
 
+    y_values.append(math.cos(   x))
+    y_values.append(math.sin(x))
+    return y_values
 
-
+def screenify_y_values(y_values):
+    iy_values = []
+    for y in y_values:
+        iy_values.append(int(600 * (1-y)))
+    return iy_values
 
 
 if __name__ == '__main__':
     main()
+
 
