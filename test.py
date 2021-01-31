@@ -47,8 +47,8 @@ def bifurcation_values(r):
     '''returns a set of vertical values for the bifurcation diagram'''
     y_values = []
 
-    iterations = 100
-    sample_threshold = 70
+    iterations = 300
+    sample_threshold = 200
 
     x = 0.5
 
