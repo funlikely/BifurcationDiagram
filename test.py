@@ -1,5 +1,9 @@
 '''
     Bifurcation Diagram
+    2021-01-31
+
+    note- adding the following to settings.json to make pylint behave:
+        "python.linting.pylintArgs": [ "--extension-pkg-whitelist=pygame --goodnames=x,y,i,j" ]
 '''
 
 import math
