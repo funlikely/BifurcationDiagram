@@ -1,0 +1,7 @@
+// looks like it belongs in C:\Users\horse\AppData\Roaming\Code\User\settings.json
+{
+    "python.linting.pylintArgs": [
+    "----extension-pkg-whitelist=1xml",
+   
+  ]
+}
