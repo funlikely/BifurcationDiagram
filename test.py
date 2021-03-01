@@ -11,7 +11,7 @@ import sys
 import pygame
 
 
-#draw bifurcation diagram
+# Draw bifurcation diagram
 def main():
     print('Hello World')
 
@@ -22,7 +22,6 @@ def main():
     screen = pygame.display.set_mode(screen_size)
 
     # graph
-
     redraw = True
 
     while True:
@@ -47,7 +46,7 @@ def main():
 '''Check whether a pygame input event is an Exit request'''
 def eventIsExitEvent(event):
     return event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE)
-    
+
 '''returns a set of vertical values for the bifurcation diagram'''
 def bifurcation_values(r):
     '''returns a set of vertical values for the bifurcation diagram'''
