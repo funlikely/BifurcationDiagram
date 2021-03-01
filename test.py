@@ -17,6 +17,7 @@ def main():
 
     pygame.init()
     screen_size = (1200, 800)
+    WHITE_COLOR = (255, 255, 255)
 
     screen = pygame.display.set_mode(screen_size)
 
@@ -30,12 +31,14 @@ def main():
                 sys.exit()
 
         if redraw:
-            for ix in range(screen_size[0]):
-                x = ix * 4 / screen_size[0]
+            num_x_pixels = screen_size[0]
+            num_y_pixels = screen_size[1]
+            for ix in range(num_x_pixels):
+                x = ix * 4 / num_x_pixels
                 y_values = bifurcation_values(x)
-                iy_values = screenify_y_values(y_values, screen_size[1])  # = int( 600 * (1-y))
+                iy_values = screenify_y_values(y_values, num_y_pixels)  # = int( 600 * (1-y))
                 for iy in iy_values:
-                    screen.set_at((ix, iy), (255,255,255))
+                    screen.set_at((ix, iy), WHITE_COLOR)
 
                 pygame.display.update()
 
