@@ -13,7 +13,7 @@ import pygame
 
 # Draw bifurcation diagram
 def main():
-    print('Hello World')
+    print('This program should draw a Bifurcation Diagram. Requires the "pygame" module.')
 
     pygame.init()
     screen_size = (1200, 800)
