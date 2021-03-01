@@ -27,7 +27,7 @@ def main():
 
     while True:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+            if eventIsExitEvent(event):
                 sys.exit()
 
         if redraw:
@@ -44,6 +44,9 @@ def main():
 
             redraw = False
 
+'''Check whether a pygame input event is an Exit request'''
+def eventIsExitEvent(event):
+    return event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE)
     
 '''returns a set of vertical values for the bifurcation diagram'''
 def bifurcation_values(r):
